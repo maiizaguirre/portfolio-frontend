@@ -1,0 +1,61 @@
+<header>
+    <head>
+        <!-- Place your kit's code here -->
+        <script src="https://kit.fontawesome.com/67f5b40d62.js" crossorigin="anonymous"></script>
+      </head>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+        <div class="home p-1 rounded">
+            <ul class="navbar-nav">
+                <li class="nav-item p-1 rounded">
+                        <a class="nav-link smooth-scroll" href="#"><img
+                            width="100"
+                            alt="Argentina Programa Logo"
+                            src="https://i.ibb.co/PZ7tK3L/APLogo.png" 
+                          />#YoProgramo   
+                          
+                        </a>
+                </li>
+            </ul>
+        </div>
+        <button class="navbar-toggler nav mb-1" >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="container">
+            <div style="width: 100%; float: right;"  class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav" style=" float: right;">
+                    <li class="nav-item p-1 rounded">
+                        <a class="nav-link js-scroll-trigger smooth-scroll text-uppercase" href="#about"><i class="fas fa-user"></i> Sobre mí
+                        </a>
+                    </li>
+                    <li class="nav-item p-1 rounded" >
+                        <a class="nav-link js-scroll-trigger smooth-scroll text-uppercase"  href="#competences"><i class="fa-solid fa-bars-progress"></i>Aptitudes</a>
+                    </li>
+                    <li class="nav-item p-1 rounded">
+                        <a class="nav-link js-scroll-trigger smooth-scroll text-uppercase" href="#cv"> <i class="fa-solid fa-file"></i>CV</a>
+                    </li>
+
+                    <li class="nav-item p-1 rounded">
+                        <a class="nav-link js-scroll-trigger smooth-scroll text-uppercase" href="#portfolio"><i class="fa-solid fa-code"></i>Proyectos</a>
+                    </li>
+
+                    <li class="nav-item p-1 rounded">
+                        <a class="nav-link js-scroll-trigger smooth-scroll text-uppercase" href="#references"><i class="fa-solid fa-check"></i>Recomendaciones</a>
+                    </li>
+
+                    <li class="nav-item p-1 rounded">
+                        <a class="nav-link js-scroll-trigger smooth-scroll text-uppercase" href="#contact"> <i class="fa-solid fa-at"></i>Contactame</a>
+                    </li>
+                </ul>
+
+                <!--boton Login-->
+                <form class="form-inline my-2 my-lg-0">
+                    <button *ngIf="!isLogged" class="btn btn-outline-primary my-2 my-sm-2" routerLink="/login" type="submit">
+                      <i class="fas fa-chess-pawn"></i> Iniciar Sesión</button>
+                      <button *ngIf="isLogged" class="btn btn-outline-danger my-2 my-sm-0" (click)="onLogOut()" type="reset">
+                        <i class="fa-solid fa-power-off"></i> Cerrar Sesión</button>
+                  </form>
+            </div>
+        </div>
+    </nav>
+</header>
