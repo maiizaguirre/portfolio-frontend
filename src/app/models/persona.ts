@@ -4,16 +4,24 @@ export class Persona {
     apellido: string;
     email: string;
     celular: string; 
+    fotoPerfil?: string;
+    fotoPortada?: string;
     descripcion: string;
-    ciudad: string;
+    ciudad?: string;
+    pais?: string;
 
-    constructor(nombre: string, apellido: string, email: string, celular: string, descripcion: string, ciudad: string) {
+    constructor( nombre: string, apellido: string, celular: string, descripcion: string, email: string) {
+        
         this.nombre = nombre;
+
         this.apellido = apellido;
-        this.email = email;
+        
         this.celular = celular;
+       
         this.descripcion = descripcion;
-        this.ciudad = ciudad;
+
+        this.email = email;
+       
     }
 }
 

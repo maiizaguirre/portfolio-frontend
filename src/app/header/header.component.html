@@ -1,7 +1,6 @@
 <header>
     <head>
-        <!-- Place your kit's code here -->
-        <script src="https://kit.fontawesome.com/67f5b40d62.js" crossorigin="anonymous"></script>
+       
       </head>
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
@@ -36,12 +35,12 @@
                     </li>
 
                     <li class="nav-item p-1 rounded">
-                        <a class="nav-link js-scroll-trigger smooth-scroll text-uppercase" href="#portfolio"><i class="fa-solid fa-code"></i>Proyectos</a>
+                        <a class="nav-link js-scroll-trigger smooth-scroll text-uppercase" href="#projects"><i class="fa-solid fa-code"></i>Proyectos</a>
                     </li>
 
-                    <li class="nav-item p-1 rounded">
+                    <!-- <li class="nav-item p-1 rounded">
                         <a class="nav-link js-scroll-trigger smooth-scroll text-uppercase" href="#references"><i class="fa-solid fa-check"></i>Recomendaciones</a>
-                    </li>
+                    </li> -->
 
                     <li class="nav-item p-1 rounded">
                         <a class="nav-link js-scroll-trigger smooth-scroll text-uppercase" href="#contact"> <i class="fa-solid fa-at"></i>Contactame</a>
@@ -49,10 +48,15 @@
                 </ul>
 
                 <!--boton Login-->
-                <form class="form-inline my-2 my-lg-0">
-                    <button *ngIf="!isLogged" class="btn btn-outline-primary my-2 my-sm-2" routerLink="/login" type="submit">
+                <form class="form-inline my-2 my-lg-0 ml-auto">
+                    <a  class="btn-social-media" href="https://www.linkedin.com/in/marinaizaguirre/" rel="tooltip" target="_blank"  title="Seguir en Linkedin">
+                        <i  class="fa fa-linkedin fa-lg "></i>
+                    </a>
+                    <a class="btn-social-media btn-default btn-round btn-lg btn-icon ml-3" href="https://github.com/maiizaguirre" rel="tooltip" target="_blank" title="Seguir en GitHub" >
+                        <i  class="fa fa-github fa-lg "></i></a>
+                    <button *ngIf="!isLogged" class="btn btn-outline-primary my-2 my-sm-2 ml-3" routerLink="/login" type="submit">
                       <i class="fas fa-chess-pawn"></i> Iniciar Sesión</button>
-                      <button *ngIf="isLogged" class="btn btn-outline-danger my-2 my-sm-0" (click)="onLogOut()" type="reset">
+                      <button *ngIf="isLogged" class="btn btn-outline-danger my-2 my-sm-0 ml-3" (click)="onLogOut()" type="reset">
                         <i class="fa-solid fa-power-off"></i> Cerrar Sesión</button>
                   </form>
             </div>

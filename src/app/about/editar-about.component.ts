@@ -5,11 +5,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-editar-persona',
-  templateUrl: './editar-persona.component.html',
-  styleUrls: ['./editar-persona.component.css']
+  selector: 'app-editar-about',
+  templateUrl: './editar-about.component.html',
+  styleUrls: ['./editar-about.component.css']
 })
-export class EditarPersonaComponent implements OnInit {
+export class EditarAboutComponent implements OnInit {
 
   persona: Persona = null;
 
@@ -22,9 +22,9 @@ export class EditarPersonaComponent implements OnInit {
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.params.id;
-    this.personaService.detail(id).subscribe(
+    this.personaService.verPersonas().subscribe(
       data => {
-        this.persona = data;
+        this.persona = data[0];
       },
       err => {
         this.toastr.error(err.error.mensaje, 'Fail', {
@@ -37,12 +37,12 @@ export class EditarPersonaComponent implements OnInit {
 
   onUpdate(): void {
     const id = this.activatedRoute.snapshot.params.id;
-    this.personaService.update(id, this.persona).subscribe(
+    this.personaService.modificarPersona(id, this.persona).subscribe(
       data => {
-        this.toastr.success('Persona Actualizada', 'OK', {
+        this.toastr.success('About Actualizado', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
-        this.router.navigate(['/ver/personas']);
+        this.router.navigate(['/']);
       },
       err => {
         this.toastr.error(err.error.mensaje, 'Fail', {

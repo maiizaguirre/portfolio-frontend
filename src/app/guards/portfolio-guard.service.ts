@@ -18,7 +18,7 @@ export class PortfolioGuardService implements CanActivate {
     const expectedRol = route.data.expectedRol;
     this.realRol = this.tokenService.isAdmin() ? 'admin' : 'user';
     if (!this.tokenService.isLogged() || expectedRol.indexOf(this.realRol) < 0) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/login']);
       return false;
     }
     return true;

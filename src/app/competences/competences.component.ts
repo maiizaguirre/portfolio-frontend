@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Persona } from '../models/persona';
+import { PersonaService } from '../service/persona.service';
+import { ToastrService } from 'ngx-toastr';
+import { TokenService } from '../service/token.service';
 
 
 @Component({
@@ -10,11 +14,18 @@ import { Component, OnInit } from '@angular/core';
 
 export class CompetencesComponent implements OnInit {
 
-  constructor() {
+  isAdmin = false;
+
+  constructor(
+    private personaService: PersonaService,
+    private toastr: ToastrService,
+    private tokenService: TokenService
+  ) {
   
   }
 
   ngOnInit(): void {
+    this.isAdmin = this.tokenService.isAdmin();
 }
   }
 

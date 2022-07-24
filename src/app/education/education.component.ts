@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import * as awesom from '@fortawesome/free-solid-svg-icons';
+import { Persona } from '../models/persona';
+import { PersonaService } from '../service/persona.service';
+import { ToastrService } from 'ngx-toastr';
+import { TokenService } from '../service/token.service';
 
 
 @Component({
@@ -9,13 +12,14 @@ import * as awesom from '@fortawesome/free-solid-svg-icons';
 
 })
 export class EducationComponent implements OnInit {
+
+  isAdmin = false;
+
   basfIsShown: boolean = false ;
   gcbaIsShown : boolean = false;
   exaIsShown:boolean = false;
   forumIsShown:boolean = false;
-  planeIcon: any ;
-  gameIcon:any;
-  volleyBallIcon:any;
+  
   detailOnClick(id:String) {
     if(id=="exa_detail"){
       this.exaIsShown = !this.exaIsShown;
@@ -31,13 +35,15 @@ export class EducationComponent implements OnInit {
     }
   }
  
-  constructor() { 
+  constructor(
+    private personaService: PersonaService,
+    private toastr: ToastrService,
+    private tokenService: TokenService
+  ) { 
   }
 
   ngOnInit(): void {
-    this.planeIcon=awesom.faPlane;
-    this.gameIcon=awesom.faGamepad;
-    this.volleyBallIcon=awesom.faVolleyballBall;
+    this.isAdmin = this.tokenService.isAdmin();
   }
 
 }

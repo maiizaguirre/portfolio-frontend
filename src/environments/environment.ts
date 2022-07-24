@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  personaURL: 'http://localhost:8080/ver/personas',
+  personaURL: 'http://localhost:8080/persona/',
   authURL: 'http://localhost:8080/auth/'
 };
 

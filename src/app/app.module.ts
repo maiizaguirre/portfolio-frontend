@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { interceptorProvider } from './interceptors/portfolio-interceptor.service';
 
 //import { ListaProductoComponent } from './producto/lista-producto.component';
 //import { PersonaComponent } from './persona/persona.component';
@@ -26,7 +27,12 @@ import { AboutComponent } from './about/about.component';
 import { EducationComponent } from './education/education.component';
 import { CompetencesComponent } from './competences/competences.component';
 import { ContactComponent } from './contact/contact.component';
+import { EditarAboutComponent } from './about/editar-about.component';
 
+import { PersonaService } from './service/persona.service';
+import { EditarCompetencesComponent } from './competences/editar-competences.component';
+import { EditarEducationComponent } from './education/editar-education.component';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +40,7 @@ import { ContactComponent } from './contact/contact.component';
     //ListaProductoComponent,
     //PersonaComponent,
     //NuevoProductoComponent,
-    //EditarPersonaComponent,
+    EditarAboutComponent,
     LoginComponent,
     RegistroComponent,
     HeaderComponent,
@@ -43,7 +49,10 @@ import { ContactComponent } from './contact/contact.component';
     AboutComponent,
     EducationComponent,
     CompetencesComponent,
-    ContactComponent
+    ContactComponent,
+    EditarCompetencesComponent,
+    EditarEducationComponent,
+    ProjectsComponent
 
   ],
   imports: [
@@ -56,7 +65,7 @@ import { ContactComponent } from './contact/contact.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

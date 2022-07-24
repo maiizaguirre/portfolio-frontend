@@ -13,27 +13,23 @@ export class PersonaService {
 
   constructor(private httpClient: HttpClient) { }
 
-  //public lista(): Observable<Persona[]> {
-  //  return this.httpClient.get<Persona[]>(this.personaURL);
- // }
-
-  public detail(id: number): Observable<Persona> {
-    return this.httpClient.get<Persona>(this.personaURL + `detail/${id}`);
+  public verPersonas(): Observable<Persona[]> {
+    return this.httpClient.get<Persona[]>(this.personaURL + 'ver/personas');
   }
-
-  //public detailName(nombre: string): Observable<Persona> {
-  //  return this.httpClient.get<Persona>(this.personaURL + `detailname/${nombre}`);
-  //}
+  
+  public buscarPersona(id: number): Observable<Persona> {
+    return this.httpClient.get<Persona>(this.personaURL+`detail/${id}`);
+  }  
 
  // public save(persona: Persona): Observable<any> {
  //  return this.httpClient.post<any>(this.personaURL + 'new/persona', persona);
  // }
 
-  public update(id: number, persona: Persona): Observable<any> {
+  public modificarPersona(id: number, persona: Persona): Observable<any> {
     return this.httpClient.put<any>(this.personaURL + `modificar/persona/${id}`, persona);
   }
 
-  public delete(id: number): Observable<any> {
-    return this.httpClient.delete<any>(this.personaURL + `delete/${id}`);
-  }
+  //public delete(id: number): Observable<any> {
+    //return this.httpClient.delete<any>(this.personaURL + `delete/${id}`);
+  //}
 }

@@ -4,22 +4,28 @@
         <p>
                     
         </p>
-        <h2><strong>Sobre mí</strong></h2>
+        <h2><strong>Sobre mí</strong></h2> 
+        
+        <div class="d-flex justify-content-right mb-3" *ngIf="isAdmin">
+            <button class="btn btn-outline-warning" routerLink="/editar-about/{{persona.id}}" ><i class="far fa-edit"></i> Editar</button>
+        </div>
+
         <span class="bar-title mb-5"></span>
-        <div class="row">
-            <div class="col-lg-4 col-md-12" data-aos="fade-right" >
+        <div class="row" *ngIf="persona">
+            <div class="col-lg-4 col-md-12" data-aos="fade-right"  >
 
                 <picture>
-                    <img src="https://i.ibb.co/GdQGq24/profile-picture.jpg" alt="foto de perfil" class="img-fluid">
+                    <img src="{{persona.fotoPerfil}}" alt="foto de perfil" class="img-fluid">
                 </picture>
                
                
               
             </div>
             <div class="col-lg-8  col-md-12 pt-4 pt-lg-0" data-aos="fade-left">
-                <h3>Full Stack Developer &amp; Project Manager.</h3>
+                <h2>-{{persona.nombre}} {{persona.apellido}}-</h2>
+                <h3>Full Stack Developer Jr. &amp; Project Manager.</h3>
                 <p class="font-italic">
-                    Soy una profesional con experiencia tanto en el sector público como privado, en búsqueda de nuevos desafíos y crecimiento en la gestión de proyectos con impacto positivo.
+                    {{persona.descripcion}} 
                     <br>Apasionada por el <b>Desarrollo Tecnológico</b> y la <b>Innovación</b>.
                 </p>
                 <div class="row">
@@ -29,11 +35,11 @@
                                 <i class="fa-solid fa-location-dot"></i><strong> Trabajo Remoto </strong>
                             </li>
                             <li>
-                                <i class="fa-solid fa-building"></i><strong> Buenos Aires, Argentina </strong>
+                                <i class="fa-solid fa-building"></i><strong> {{persona.ciudad}}, {{persona.pais}} </strong>
                             </li>
                             <li>
                                 <i class="fa-solid fa-at"></i><strong><a href="mailto:mai.izaguirre@hotmail.com">
-                                        mai.izaguirre@hotmail.com</a></strong>
+                                        {{persona.email}} </a></strong>
                             </li>
                             <div class="d-flex justify-content-left">
                                 <a  class="btn-social-media" href="https://www.linkedin.com/in/marinaizaguirre/" rel="tooltip" target="_blank"  title="Seguir en Linkedin">
@@ -42,12 +48,13 @@
                                 <a class="btn-social-media btn-default btn-round btn-lg btn-icon" href="https://github.com/maiizaguirre" rel="tooltip" target="_blank" title="Seguir en GitHub" >
                                     <i  class="fa fa-github fa-lg "></i></a>
                             </div>
+                            
                         </ul>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <ul>
                             <li>
-                                <i class="fa-solid fa-mobile-screen"></i><strong> +54 9 11 3120 3321 </strong>
+                                <i class="fa-solid fa-mobile-screen"></i><strong> {{persona.celular}} </strong>
                             </li>
                             <li>
                                 <i class="fa-solid fa-laptop-code"></i><strong> Full Stack Developer </strong>

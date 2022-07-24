@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Persona } from '../models/persona';
+import { PersonaService } from '../service/persona.service';
+import { ToastrService } from 'ngx-toastr';
 import { TokenService } from '../service/token.service';
-
-
 
 @Component({
   selector: 'app-about',
@@ -10,19 +11,29 @@ import { TokenService } from '../service/token.service';
 })
 export class AboutComponent implements OnInit {
 
-  isLogged = false;
+  persona: Persona;
   isAdmin = false;
+  
+  constructor(
+    private personaService: PersonaService,
+    private toastr: ToastrService,
+    private tokenService: TokenService) { }
+  
+  ngOnInit() {
 
-  
-  
-  constructor(private tokenService: TokenService) { }
-  
-  ngOnInit(): void {
-
-    this.isLogged = this.tokenService.isLogged();
+    this.verPersonas();   
     this.isAdmin = this.tokenService.isAdmin();
 
-   
   }
  
+  verPersonas(): void {
+    this.personaService.verPersonas().subscribe(
+      data => {
+        this.persona = data[0];
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
 }
