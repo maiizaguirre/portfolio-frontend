@@ -5,16 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { interceptorProvider } from './interceptors/portfolio-interceptor.service';
 
-//import { ListaProductoComponent } from './producto/lista-producto.component';
-//import { PersonaComponent } from './persona/persona.component';
-//import { NuevoProductoComponent } from './producto/nuevo-producto.component';
-//import { EditarPersonaComponent } from './persona/editar-persona.component';
-
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-// external
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent } from './auth/login.component';
@@ -37,9 +31,6 @@ import { ProjectsComponent } from './projects/projects.component';
 @NgModule({
   declarations: [
     AppComponent,
-    //ListaProductoComponent,
-    //PersonaComponent,
-    //NuevoProductoComponent,
     EditarAboutComponent,
     LoginComponent,
     RegistroComponent,

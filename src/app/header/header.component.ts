@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
    this.isLogged = this.tokenService.isLogged();
    this.isAdmin = this.tokenService.isAdmin();
   
-   //lo que sigue vino en template
+   
    $('.js-scroll-trigger').on('click',
    function(): void
    {
