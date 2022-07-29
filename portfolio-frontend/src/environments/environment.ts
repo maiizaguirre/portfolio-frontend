@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  personaURL: 'https://intense-earth-36097.herokuapp.com/persona/',
-  authURL: 'https://intense-earth-36097.herokuapp.com/auth/'
+  personaURL: 'http://localhost:8080/persona/',
+  authURL: 'http://localhost:8080/auth/'
 };
 
 /*
