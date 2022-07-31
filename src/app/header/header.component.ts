@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Persona } from '../models/persona';
-import { PersonaService } from '../service/persona.service';
-import { ToastrService } from 'ngx-toastr';
 import { TokenService } from '../service/token.service';
 import * as $ from 'jquery';
 
@@ -11,17 +8,12 @@ import * as $ from 'jquery';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  persona: Persona;
   isLogged = false;
   isAdmin = false;
 
-  constructor(
-    private personaService: PersonaService,
-    private toastr: ToastrService,
-    private tokenService: TokenService) { }
+  constructor(private tokenService: TokenService) { }
 
   ngOnInit() {
-    this.verPersonas();   
    this.isLogged = this.tokenService.isLogged();
    this.isAdmin = this.tokenService.isAdmin();
   
@@ -44,14 +36,5 @@ export class HeaderComponent implements OnInit {
     this.tokenService.logOut();
   };
 
-  verPersonas(): void {
-    this.personaService.verPersonas().subscribe(
-      data => {
-        this.persona = data[0];
-      },
-      err => {
-        console.log(err);
-      }
-    );
-  }
+   
   }
