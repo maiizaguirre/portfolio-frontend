@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PersonaService } from 'src/app/service/persona.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
